@@ -1,4 +1,4 @@
-version: "3"
+version: "3.2"
 
 services:
   python3:
@@ -18,5 +18,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
+    links:
+      - python3
     ports:
       - 8000:8000
