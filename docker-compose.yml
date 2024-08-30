@@ -20,4 +20,4 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     ports:
-      - 8000:8000
+      - 8000:80
