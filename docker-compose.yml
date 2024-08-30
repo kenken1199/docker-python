@@ -4,21 +4,20 @@ services:
   python3:
     restart: always
     build: .
-
     container_name: "python3"
     working_dir: "/work/"
     tty: true
     volumes:
       - ./:/work/
-    ports:
-      - "9000:9000"
+    # ports:
+    #   - "9000:9000"
+    expose:
+      - 8080
 
   nginx:
     container_name: python3-nginx
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    links:
-      - python3
     ports:
-      - 8000:8000
+      - 80:80
